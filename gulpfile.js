@@ -30,9 +30,6 @@ gulp.task('css', function(){
 
 gulp.task('js', function(){
     return gulp.src('src/js/**/*.js')
-    .pipe(babel({
-      presets: ['env']
-    }))
     .pipe(concat('script.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
@@ -45,4 +42,4 @@ gulp.task('img', function(){
   .pipe(gulp.dest('dist/img'))
 });
 
-gulp.task('default', ['serve','js','sass']);
+gulp.task('default', ['serve','js']);
